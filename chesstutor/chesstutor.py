@@ -1,17 +1,11 @@
-import pdb
 import random
 
 import chess
 import chess.engine
-import click
+
 
 engine = chess.engine.SimpleEngine.popen_uci('/usr/local/bin/stockfish')
 
-@click.group()
-def cli():
-    pass
-
-@click.command()
 def play():
     """Play chess against an AI with an AI assisting you."""
     board = chess.Board()
@@ -39,8 +33,3 @@ def play():
         result = engine.play(board, chess.engine.Limit(time=0.5))
         click.echo("\nBlack plays: {}".format(result.move))
         board.push(result.move)
-
-cli.add_command(play)
-
-if __name__ == '__main__':
-    cli()
