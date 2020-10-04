@@ -1,13 +1,15 @@
+import os
 import random
 
 import chess
 import chess.engine
+import click
 
 
 engine = chess.engine.SimpleEngine.popen_uci('/usr/local/bin/stockfish')
 
 def play():
-    """Play chess against an AI with an AI assisting you."""
+    os.system('clear')
     board = chess.Board()
     while not board.is_game_over():
         click.echo(board)
