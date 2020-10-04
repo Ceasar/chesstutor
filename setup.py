@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="chesstutor-Ceasar",
-    version="0.0.1",
+    version="0.0.2",
     author="Ceasar Bautista",
     author_email="cbautista2010@gmail.com",
     description="Play chess on the command line.",
